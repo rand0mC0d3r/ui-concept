@@ -7,13 +7,25 @@ import { useTheme } from '../../api/KeyboardContext';
 // import ThemeContext from '../../api/KeyboardContext';
 
 export default () => {
-  const [state] = useTheme();
+  const [state, dispatcher] = useTheme();
   // const bg = state.theme === 'light' ? '#ffffff' : '#000000';
 
   // const { language, setLanguage } = useContext(LanguageContext);
 
-  return <Wrapper tabIndex="4">
+  return <Wrapper data-highlight={state.highlight}>
       x {state.theme}
+
+    {state.highlight ? 'fsfsd' : 'sdfdsfs'}
+
+    <button
+      onClick={() => {
+        dispatcher({ type: 'highlight', payload: !state.highlight });
+      }}
+    >
+      change
+    </button>
+
+
   </Wrapper>;
 
 };

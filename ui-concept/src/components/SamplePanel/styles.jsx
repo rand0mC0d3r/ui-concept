@@ -14,8 +14,15 @@ export const Wrapper = styled.div`
     max-height: 50%;
     transition: all 335ms;
 
-    &: hover {
-        transition: all 550ms;
-        box-shadow: 0px 0px 3px 3px #CCC;
-    }
+    ${props => props['data-highlight'] ? `
+        box-shadow: 0px 0px 7px 7px #AAA;
+    ` : `
+
+        &: hover {
+            transition: all 550ms;
+            box-shadow: 0px 0px 3px 3px #CCC;
+        }
+    `}
+
+
 `;
