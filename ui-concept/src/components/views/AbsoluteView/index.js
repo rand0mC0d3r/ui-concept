@@ -4,6 +4,7 @@ import SamplePanel from '../../SamplePanel/index.js';
 import { Wrapper, Container } from './styles.jsx';
 
 import { ThemeProvider } from './../../../api/KeyboardContext';
+import KeyboardListener from '../../KeyboardListener/index.js';
 
 // const MyCustomContext = React.createContext();
 
@@ -12,7 +13,9 @@ export default () => {
 
   return <ThemeProvider>
     <Wrapper>
+
       <Container>
+        <KeyboardListener />
         <SamplePanel />
         <SamplePanel />
         <SamplePanel />
