@@ -5,6 +5,7 @@ const ThemeContext = createContext();
 const DEFAULT_STATE = {
   theme: 'light',
   highlight: false,
+  keyPress: false,
 };
 
 const reducer = (state, actions) => {
@@ -13,6 +14,8 @@ const reducer = (state, actions) => {
     return { ...state, theme: actions.payload };
   case 'highlight':
     return { ...state, highlight: actions.payload };
+  case 'keyPress':
+    return { ...state, keyPress: actions.payload };
   default:
     return DEFAULT_STATE;
   }

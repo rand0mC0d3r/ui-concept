@@ -1,68 +1,43 @@
-/* eslint-disable no-debugger */
 import React from 'react';
-// import React, { useContext } from 'react';
-import { Wrapper } from './styles.jsx';
 import { useTheme } from '../../api/KeyboardContext';
 
-// import { hookUseKeyPress } from './hookUseKeyPress';
-
-// import ThemeContext from '../../api/KeyboardContext';
-
-
-
-
-
-
-
 export default () => {
-  // const [state, dispatcher] = useTheme();
+  // eslint-disable-next-line no-unused-vars
   const [state, dispatcher] = useTheme();
-  // Hook
-  function useKeyPress(targetKey) {
-  // State for keeping track of whether key is pressed
-    const [keyPressed, setKeyPressed] = React.useState(false);
 
-    // If pressed key is our target key then set to true
+  function useKeyPress() {
+
     function downHandler({ key }) {
-      debugger;
-      console.log('state.highlight', state.highlight);
-      if (key === targetKey) {
-        setKeyPressed(true);
+      if (key === 'Shift') {
         dispatcher({ type: 'highlight', payload: true });
       }
     }
+    function pressHandler({ key }) {
+      dispatcher({ type: 'keyPress', payload: key });
+    }
 
-    // If released key is our target key then set to false
     const upHandler = ({ key }) => {
-      if (key === targetKey) {
-        if(keyPressed) {
-          setKeyPressed(false);
-        }
+      if (key === 'Shift') {
         dispatcher({ type: 'highlight', payload: false });
+      } else {
+        dispatcher({ type: 'keyPress', payload: false });
       }
     };
 
-    // Add event listeners
     React.useEffect(() => {
       window.addEventListener('keydown', downHandler);
+      window.addEventListener('keypress', pressHandler);
       window.addEventListener('keyup', upHandler);
-      // Remove event listeners on cleanup
       return () => {
         window.removeEventListener('keydown', downHandler);
+        window.removeEventListener('keypress', pressHandler);
         window.removeEventListener('keyup', upHandler);
       };
-    }, []); // Empty array ensures that effect is only run on mount and unmount
+    }, []);
 
-    return keyPressed;
   }
-  // const bg = state.theme === 'light' ? '#ffffff' : '#000000';
 
-  useKeyPress('Shift');
+  useKeyPress();
 
-  // const { language, setLanguage } = useContext(LanguageContext);
-
-  return <Wrapper >
-    {/* {foxPress && '🦊'} */}
-  </Wrapper>;
-
+  return null;
 };

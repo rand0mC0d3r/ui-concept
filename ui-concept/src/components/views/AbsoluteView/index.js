@@ -13,11 +13,13 @@ export default () => {
 
       <Container>
         <KeyboardListener />
-        <SamplePanel >
+        <SamplePanel key="a" >
           <ToggleButtons />
         </SamplePanel>
-        <SamplePanel />
-        <SamplePanel />
+        <SamplePanel key="b">
+          <ToggleButtons />
+        </SamplePanel>
+        <SamplePanel key="c" />
       </Container>
     </Wrapper>
   </ThemeProvider>
