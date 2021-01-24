@@ -12,16 +12,16 @@ export default () => {
         dispatcher({ type: 'highlight', payload: true });
       }
     }
-    function pressHandler({ key }) {
-      dispatcher({ type: 'keyPress', payload: key });
+
+    function pressHandler() {
+
     }
 
     const upHandler = ({ key }) => {
       if (key === 'Shift') {
         dispatcher({ type: 'highlight', payload: false });
-      } else {
-        dispatcher({ type: 'keyPress', payload: false });
       }
+      dispatcher({ type: 'keypress', payload: key });
     };
 
     React.useEffect(() => {

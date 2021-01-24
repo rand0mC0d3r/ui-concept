@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 
 import { useTheme } from '../../api/KeyboardContext';
 
-export default () => {
+export default ({keyboardFocus = false}) => {
   const [state] = useTheme();
   const [selection, setSelection] = React.useState('C');
   const [keyboardKeys, setKeyboardKeys] = React.useState(['1','2','3']);
@@ -17,16 +17,13 @@ export default () => {
   ];
 
   React.useEffect(() => {
-    if(keyboardKeys.includes(state.keyPress)) {
+    if(keyboardKeys.includes(state.keypressed)) {
       setSelection(...items
-        .filter(item => item.keyTrigger === state.keyPress)
+        .filter(item => item.keyTrigger === state.keypressed)
         .map(item => item.id));
       console.log(selection);
     }
-
-
   }, [state]);
-
 
   return <ButtonContainer>
     {items.map(item => <Button

@@ -19,7 +19,7 @@ export const Container = styled.div`
     flex: 1 1 auto;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-around;
     align-content: center;

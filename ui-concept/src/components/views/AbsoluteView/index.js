@@ -10,18 +10,14 @@ import ToggleButtons from '../../ToggleButtons/index.js';
 export default () => {
   return <ThemeProvider>
     <Wrapper>
-
       <Container>
         <KeyboardListener />
-        <SamplePanel key="a" >
-          <ToggleButtons />
-        </SamplePanel>
-        <SamplePanel key="b">
-          <ToggleButtons />
-        </SamplePanel>
-        <SamplePanel key="c" />
+        <SamplePanel key="a" ><ToggleButtons /></SamplePanel>
+        <SamplePanel key="b"><ToggleButtons /></SamplePanel>
+        <SamplePanel key="c"><ToggleButtons /></SamplePanel>
+        <SamplePanel key="d"><ToggleButtons /></SamplePanel>
+        <SamplePanel key="e"><ToggleButtons /></SamplePanel>
       </Container>
     </Wrapper>
-  </ThemeProvider>
-  ;
+  </ThemeProvider>;
 };

@@ -27,30 +27,9 @@ export default ({children}) => {
     onMouseOver={() => setIsFocused(true)}
     onMouseLeave={() => setIsFocused(false)}
     data-highlight={state.highlight}
-
   >
     {isFocused ? 'yes' : 'no'}
-
-    {/* <TextField autoFocus={nowFocus} type="text" /> */}
-    {/*
-    <TextField autoFocus={nowFocus} id="standard-basic" label="Standard" />
-
-    <button
-      onClick={() => {
-        dispatcher({ type: 'highlight', payload: !state.highlight });
-      }}
-    >
-      change
-    </button> */}
-
-    {children}
-
-    {/* <ButtonContainer>
-      <Button variant="contained">A</Button>
-      <Button variant="contained">B</Button>
-      <Button variant="contained">C</Button>
-    </ButtonContainer> */}
-
+    {/* {children} */}
+    {React.cloneElement(children, {keyboardFocus: isFocused})}
   </Wrapper>;
-
 };
