@@ -7,6 +7,7 @@ import Switch from '@material-ui/core/Switch';
 import Button from '@material-ui/core/Button';
 
 import { useTheme } from '../../api/KeyboardContext';
+import KeyboardDecorator from '../KeyboardDecorator/index.js';
 
 export default ({keyboardFocus = false}) => {
   const [state] = useTheme();
@@ -21,8 +22,6 @@ export default ({keyboardFocus = false}) => {
 
   React.useEffect(() => {
     if(keyboardFocus) {
-      debugger;
-      console.log(state.keypressed);
       if(state.keypressed === ' ') {
         handleOnChange();
       }
@@ -47,12 +46,13 @@ export default ({keyboardFocus = false}) => {
       inputProps={{ 'aria-label': 'secondary checkbox' }}
     />
 
-    {items.map(item => <Button
-      key={item.id}
-      variant={item.id === selection ? 'contained' : 'outlined'}
-      onClick={() => setSelection(item.id)}
-    >
-      {item.label}
-    </Button>)}
+    {items.map(item => <KeyboardDecorator shortcut={item.keyTrigger} key={item.id}>
+      <Button
+        variant={item.id === selection ? 'contained' : 'outlined'}
+        onClick={() => setSelection(item.id)}
+      >
+        {item.label}
+      </Button>
+    </KeyboardDecorator>)}
   </ButtonContainer>;
 };

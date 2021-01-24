@@ -16,7 +16,6 @@ const reducer = (state, actions) => {
   case 'highlight':
     return { ...state, highlight: actions.payload };
   case 'keypress':
-    debugger;
     return { ...state, keypressed: actions.payload };
   default:
     return DEFAULT_STATE;
