@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 // import React, { useContext } from 'react';
 import { Wrapper } from './styles.jsx';
@@ -15,11 +16,7 @@ export default ({children}) => {
 
   React.useEffect(() => {
     if(isFocused) {
-      console.log(nowFocus);
-      setTimeout(() => {
-        console.log('trigger Autofocus');
-        setNowFocus(true);
-      }, 1000);
+      setNowFocus(true);
     }
   }, [isFocused]);
 

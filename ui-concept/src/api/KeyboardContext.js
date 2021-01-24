@@ -10,8 +10,6 @@ const DEFAULT_STATE = {
 };
 
 const reducer = (state, actions) => {
-  console.log(actions);
-  console.log(state);
   switch (actions.type) {
   case 'theme':
     return { ...state, theme: actions.payload };
