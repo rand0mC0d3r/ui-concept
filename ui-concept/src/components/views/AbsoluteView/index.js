@@ -5,18 +5,17 @@ import { Wrapper, Container } from './styles.jsx';
 
 import { ThemeProvider } from './../../../api/KeyboardContext';
 import KeyboardListener from '../../KeyboardListener/index.js';
-
-// const MyCustomContext = React.createContext();
+import ToggleButtons from '../../ToggleButtons/index.js';
 
 export default () => {
-  // const [shiftPressed, setShiftPressed] = React.useState('tits');
-
   return <ThemeProvider>
     <Wrapper>
 
       <Container>
         <KeyboardListener />
-        <SamplePanel />
+        <SamplePanel >
+          <ToggleButtons />
+        </SamplePanel>
         <SamplePanel />
         <SamplePanel />
       </Container>

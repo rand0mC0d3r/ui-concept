@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
-    padding: 100px;
+    padding: 40px;
 
     flex: 1 1 auto;
 

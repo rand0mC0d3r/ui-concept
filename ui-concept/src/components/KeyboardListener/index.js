@@ -35,7 +35,9 @@ export default () => {
     // If released key is our target key then set to false
     const upHandler = ({ key }) => {
       if (key === targetKey) {
-        setKeyPressed(false);
+        if(keyPressed) {
+          setKeyPressed(false);
+        }
         dispatcher({ type: 'highlight', payload: false });
       }
     };
