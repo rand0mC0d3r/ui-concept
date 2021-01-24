@@ -12,11 +12,16 @@ export default () => {
     <Wrapper>
       <Container>
         <KeyboardListener />
-        <SamplePanel key="a" ><ToggleButtons /></SamplePanel>
-        <SamplePanel key="b"><ToggleButtons /></SamplePanel>
-        <SamplePanel key="c"><ToggleButtons /></SamplePanel>
-        <SamplePanel key="d"><ToggleButtons /></SamplePanel>
-        <SamplePanel key="e"><ToggleButtons /></SamplePanel>
+        <SamplePanel ><ToggleButtons /></SamplePanel>
+        <SamplePanel ><ToggleButtons /></SamplePanel>
+        <SamplePanel ><ToggleButtons /></SamplePanel>
+        <SamplePanel ><ToggleButtons /></SamplePanel>
+        <SamplePanel ><ToggleButtons /></SamplePanel>
+        <SamplePanel ><ToggleButtons /></SamplePanel>
+        <SamplePanel ><ToggleButtons /></SamplePanel>
+        <SamplePanel ><ToggleButtons /></SamplePanel>
+        <SamplePanel ><ToggleButtons /></SamplePanel>
+        <SamplePanel ><ToggleButtons /></SamplePanel>
       </Container>
     </Wrapper>
   </ThemeProvider>;

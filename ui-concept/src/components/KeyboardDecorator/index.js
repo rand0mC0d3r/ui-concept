@@ -5,11 +5,11 @@ import { StyledKey } from './styles.jsx';
 
 import { useTheme } from '../../api/KeyboardContext';
 
-export default ({shortcut, children}) => {
+export default ({shortcut, keyboardFocus, children}) => {
   const [state] = useTheme();
 
   return <StyledKey
-    data-highlight={state.highlight}
+    data-highlight={keyboardFocus && state.highlight}
     data-shortcut={shortcut}>
     {children}
   </StyledKey>;

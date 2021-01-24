@@ -8,7 +8,7 @@ export default () => {
   function useKeyPress() {
 
     function downHandler({ key }) {
-      if (key === 'Shift') {
+      if (key === 'Escape') {
         dispatcher({ type: 'highlight', payload: true });
       }
     }
@@ -18,7 +18,7 @@ export default () => {
     }
 
     const upHandler = ({ key }) => {
-      if (key === 'Shift') {
+      if (key === 'Escape') {
         dispatcher({ type: 'highlight', payload: false });
       }
       dispatcher({ type: 'keypress', payload: key });

@@ -15,16 +15,16 @@ export const Wrapper = styled.div`
     transition: all 335ms;
 
     ${props => props['data-highlight'] ? `
-        box-shadow: 0px 0px 7px 7px #AAA;
+        box-shadow: 0px 0px 7px 1px #CCC;
     ` : `
 
-        &: hover {
-            transition: all 550ms;
-            box-shadow: 0px 0px 3px 3px #CCC;
-        }
     `}
 
-
+    &: hover {
+        transition: all 350ms;
+        background-color: #f0eaf6;
+        box-shadow: 0px 0px 3px 1px #CCC;
+    }
 `;
 
 

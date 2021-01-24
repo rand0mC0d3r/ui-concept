@@ -23,6 +23,7 @@ export default ({keyboardFocus = false}) => {
   React.useEffect(() => {
     if(keyboardFocus) {
       if(state.keypressed === ' ') {
+        console.log('i changed');
         handleOnChange();
       }
       if(keyboardKeys.includes(state.keypressed)) {
@@ -39,16 +40,18 @@ export default ({keyboardFocus = false}) => {
 
   return <ButtonContainer>
 
-    <Switch
-      checked={toggled}
-      onChange={handleOnChange}
-      name="checkedA"
-      inputProps={{ 'aria-label': 'secondary checkbox' }}
-    />
+    <KeyboardDecorator keyboardFocus={keyboardFocus} shortcut={'Space'}>
+      <Switch
+        checked={toggled}
+        onChange={handleOnChange}
+      />
+    </KeyboardDecorator>
 
-    {items.map(item => <KeyboardDecorator shortcut={item.keyTrigger} key={item.id}>
+    {items.map(item => <KeyboardDecorator keyboardFocus={keyboardFocus} shortcut={item.keyTrigger} key={item.id}>
       <Button
-        variant={item.id === selection ? 'contained' : 'outlined'}
+        disabled={item.id === selection}
+        variant='outlined'
+        color="primary"
         onClick={() => setSelection(item.id)}
       >
         {item.label}
