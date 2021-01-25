@@ -1,7 +1,7 @@
 import React from 'react';
 import SamplePanel from '../../SamplePanel/index.js';
 
-import { Wrapper, Container } from './styles.jsx';
+import { Wrapper, Container, CardsContainer, SidePanel } from './styles.jsx';
 
 import { ThemeProvider } from './../../../api/KeyboardContext';
 import KeyboardListener from '../../KeyboardListener/index.js';
@@ -12,16 +12,24 @@ export default () => {
     <Wrapper>
       <Container>
         <KeyboardListener />
-        <SamplePanel ><ToggleButtons /></SamplePanel>
-        <SamplePanel ><ToggleButtons /></SamplePanel>
-        <SamplePanel ><ToggleButtons /></SamplePanel>
-        <SamplePanel ><ToggleButtons /></SamplePanel>
-        <SamplePanel ><ToggleButtons /></SamplePanel>
-        <SamplePanel ><ToggleButtons /></SamplePanel>
-        <SamplePanel ><ToggleButtons /></SamplePanel>
-        <SamplePanel ><ToggleButtons /></SamplePanel>
-        <SamplePanel ><ToggleButtons /></SamplePanel>
-        <SamplePanel ><ToggleButtons /></SamplePanel>
+        <SidePanel>
+          panel
+        </SidePanel>
+        <CardsContainer>
+          <SamplePanel ><ToggleButtons /></SamplePanel>
+          <SamplePanel ><ToggleButtons /></SamplePanel>
+          <SamplePanel ><ToggleButtons /></SamplePanel>
+          <SamplePanel ><ToggleButtons /></SamplePanel>
+          <SamplePanel ><ToggleButtons /></SamplePanel>
+          <SamplePanel ><ToggleButtons /></SamplePanel>
+          <SamplePanel ><ToggleButtons /></SamplePanel>
+          <SamplePanel ><ToggleButtons /></SamplePanel>
+          <SamplePanel ><ToggleButtons /></SamplePanel>
+          <SamplePanel ><ToggleButtons /></SamplePanel>
+        </CardsContainer>
+        <SidePanel>
+          panel
+        </SidePanel>
       </Container>
     </Wrapper>
   </ThemeProvider>;
